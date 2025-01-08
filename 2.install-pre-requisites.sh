@@ -1,6 +1,8 @@
 #!/bin/bash -x
-. /home/ec2-user/.nvm/nvm.sh
 
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.3/install.sh | bash
+
+. /home/ec2-user/.nvm/nvm.sh
 
 # AL2023 ships with AWS CLI version 2, while AL2 continues to ship with version 1 of the AWS CLI.
 
@@ -14,16 +16,16 @@
 # rm awscliv2.zip
 # rm -rf aws 
 
-# Install sam cli version 1.131.0 
-echo "Installing sam cli version 1.131.0"
-wget https://github.com/aws/aws-sam-cli/releases/download/v1.131.0/aws-sam-cli-linux-x86_64.zip
+# Install sam cli version 1.132.0 
+echo "Installing sam cli version 1.132.0"
+wget https://github.com/aws/aws-sam-cli/releases/download/v1.132.0/aws-sam-cli-linux-x86_64.zip
 unzip aws-sam-cli-linux-x86_64.zip -d sam-installation
 sudo ./sam-installation/install
 if [ $? -ne 0 ]; then
 	echo "Sam cli is already present, so deleting existing version"
 	sudo rm /usr/local/bin/sam
 	sudo rm -rf /usr/local/aws-sam-cli
-	echo "Now installing sam cli version 1.131.0"
+	echo "Now installing sam cli version 1.132.0"
 	sudo ./sam-installation/install
 fi
 rm aws-sam-cli-linux-x86_64.zip
@@ -37,13 +39,13 @@ rm get-pip.py
 
 python3 -m pip install git-remote-codecommit==1.17
 
-# Install node v18.20.0
-echo "Installing node v18.20.0"
+# Install node v22.12.0
+echo "Installing node v22.12.0"
 nvm deactivate
 nvm uninstall node
-nvm install v18.20.0
-nvm use v18.20.0
-nvm alias default v18.20.0
+nvm install v22.12.0
+nvm use v22.12.0
+nvm alias default v22.12.0
 
 # Install cdk cli version 2.133.0
 echo "Installing cdk cli version 2.133.0"
@@ -62,8 +64,8 @@ sudo yum -y install jq-1.5
 #Install pylint version 3.1.0
 python3 -m pip install pylint==3.1.0
 
-#Install cfn-lint version 0.86.0
-python3 -m pip install cfn-lint==0.87.4
+#Install cfn-lint version 1.22.3
+python3 -m pip install cfn-lint==1.22.3
 
 #Install yamllint version 1.35.1
 python3 -m pip install yamllint==1.35.1
