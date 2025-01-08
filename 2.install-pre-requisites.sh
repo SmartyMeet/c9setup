@@ -47,14 +47,14 @@ nvm install v22.12.0
 nvm use v22.12.0
 nvm alias default v22.12.0
 
-# Install cdk cli version 2.133.0
-echo "Installing cdk cli version 2.133.0"
+# Install cdk cli version 2.174.1
+echo "Installing cdk cli version 2.174.1"
 npm uninstall -g aws-cdk
-npm install -g aws-cdk@2.133.0
+npm install -g aws-cdk@2.174.1
 
-# Install yarn version 1.22.19
-echo "Installing yarn version 1.22.19"
-curl -o- -L https://yarnpkg.com/install.sh | bash -s -- --version 1.22.19 
+# Install yarn version 1.22.22
+echo "Installing yarn version 1.22.22"
+curl -o- -L https://yarnpkg.com/install.sh | bash -s -- --version 1.22.22 
 # Reload the bash profile
 source ~/.bash_profile
 
