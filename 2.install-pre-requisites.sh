@@ -73,8 +73,12 @@ python3 -m pip install yamllint==1.35.1
 # install swagger-cli globally using npm
 npm install -g swagger-cli
 
-# install the OpenAPI Generator CLI
-yarn global add @openapitools/openapi-generator-cli
+# install pnpm globally using npm
+npm install -g pnpm
+
+# # install the OpenAPI Generator CLI
+# yarn global add @openapitools/openapi-generator-cli
+npm install -g @openapitools/openapi-generator-cli
 
 #Get User Data
 C9_USER_ID=$(aws sts get-caller-identity | jq -r '.UserId')
